@@ -84,3 +84,44 @@
         padding: 0 20px;
     }
 }
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .header {
+        flex-direction: column-reverse;
+    }
+    .header img {
+        width: 100%;
+    }
+    .header h2 {
+        font-size: 50px;
+    }
+    .sell {
+        flex-direction: column;
+    }
+    .list {
+        flex-wrap: wrap;
+    }
+    .list span {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .items {
+        flex-direction: column;
+        
+    }
+    .items div{
+        width: 100%;
+    }
+    footer {
+        flex-direction: column;
+    }
+    .explore {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .socailmeadia {
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+}

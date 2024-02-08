@@ -185,6 +185,7 @@ body {
     padding: 0px 80px;
     margin-top: 30px;
     justify-content: center;
+    flex: 1 1 auto;
 }
 .category {
     display: flex;
@@ -241,17 +242,34 @@ body {
 .list span .time span {
     width: 50%;
     background: #EDECEC;
-   cursor: pointer;
-    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #DFDCDC;
     transition: all .4s;
+    position: relative;
+    transition: color .5s ease;
+}
+.list span .time span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #0f2182;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    z-index: -1;
+    width: (100% + 5px);
+    border-radius: 15px;
+    
+}
+.list span .time span:hover::before{
+    transform: scaleX(1);
+
 }
 .list .time {
     width: 100%;
 }
-.list .time span:hover {
-    background-color: #0f2182;
-    color: #fff;
-}
+
 .view {
     display: flex;
     justify-content: center;
@@ -263,29 +281,39 @@ body {
     font-family: 'Ubuntu',sans-serif;
     font-weight: 600;
     font-size: 18px;
-    background-color: #0f2182;
+    background: none;
     border-radius: 10px;
-    color: #DFDCDC;
-    animation:  button 10s  infinite ease-in-out ;
+    overflow: hidden;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    transition: color .5s ease-in-out;
+    border:1px solid #000;
+    transition: all .5s  ;
 }
-@keyframes button {
-    0% {
-        background-color: #DFDCDC;
-        color: #0f2182;
-        transform: scale(.8);
-        border: none;
-    }
-    50% {
-        
-        transform: scale(1.2);
-    }
-    100% {
-        background-color: #0f2182;
-        color: #DFDCDC;
-        transform: scale(.8);
-        border: none;
-    }
-    
+
+.view button:hover {
+    color: black;
+    transform: scale(1.05);
+    border: 1px solid #48cae4;
+}
+.view button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #48cae4;
+    z-index: -1;
+    transition: transform .5s ease;
+}
+.view button:before {
+    transform: scaleX(0);
+}
+.view button:hover::before {
+    transform: scaleX(1);
+    box-shadow: 0px 0px 20px #0f2182;
 }
 .items {
     display: flex;
@@ -400,7 +428,7 @@ footer {
 .sell {
     display: flex;
     padding: 20px 80px;
-    gap: 20px;
+    gap: 30px;
     margin-top: 20px;
 }
 .sell i {
@@ -414,7 +442,43 @@ footer {
     transition: all .4s ease-in-out;
 }
 .sell div:hover {
-    background-color: #0f2182;
-    color: white;
     transform: scale(1.05);
+}
+.sell div span{
+    position: relative;
+    
+    overflow: hidden;
+}
+.sell div span:hover{
+    color: black;
+    
+}
+.sell div span:hover i{
+    color: #EDECEC;
+    text-shadow: 0px 0px 10px black;
+    
+}
+.sell div span::before {
+    content: "";
+    background: #48cae4;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: left;
+    transition: transform   .5s ease;
+}
+.sell div span::before{
+    transform: scaleX(0);
+}
+.sell div span:hover::before {
+    transform: scaleX(1);
+}
+h1 {
+    color: rgba(0, 0, 0, 0.1);
+    color: #EEE;
+    color: white;
 }
